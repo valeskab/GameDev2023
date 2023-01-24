@@ -7,6 +7,7 @@ using UnityEngine.InputSystem;
 public class ClickToMoveBehaviour : MonoBehaviour
 {
     [SerializeField] private InputAction touchClickAction;
+    [SerializeField] private float playerSpeed = 10f;
 
     private Camera mainCamera;
     private Coroutine coroutine;
@@ -39,9 +40,11 @@ public class ClickToMoveBehaviour : MonoBehaviour
 
     private IEnumerator PlayerMoveTowards(Vector3 target)
     {
-        while (Vector3)
+        while (Vector3.Distance(transform.position, target) > 0.1f)
         {
-            
+            Vector3 destination = Vector3.MoveTowards(transform.position, target, playerSpeed * Time.deltaTime);
+            transform.position = destination;
+            yield return null;
         }
     }
 }
