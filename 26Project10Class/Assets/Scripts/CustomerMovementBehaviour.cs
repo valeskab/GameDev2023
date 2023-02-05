@@ -6,6 +6,14 @@ public class CustomerMovementBehaviour : MonoBehaviour
 {
     public Transform targetTable;
     public float speed = 2f;
+    public float patience = 10.0f;
+    private float timer;
+    
+    
+    private void Start()
+    {
+        timer = patience;
+    }
 
     void Update()
     {
@@ -16,5 +24,20 @@ public class CustomerMovementBehaviour : MonoBehaviour
         {
             
         }
+
+        else
+        {
+            timer -= Time.deltaTime;
+
+            if (timer <= 0)
+            {
+                Leave();
+            }
+        }
+    }
+    
+    private void Leave()
+    {
+        Debug.Log("Customer left because they ran out of patience.");
     }
 }
