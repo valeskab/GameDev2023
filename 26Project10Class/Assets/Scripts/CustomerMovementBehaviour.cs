@@ -4,40 +4,35 @@ using UnityEngine;
 
 public class CustomerMovementBehaviour : MonoBehaviour
 {
-    public Transform targetTable;
-    public float speed = 2f;
-    public float patience = 10.0f;
-    private float timer;
-    
-    
-    private void Start()
-    {
-        timer = patience;
-    }
+    private bool isBeingDragged = false;
+    private Vector3 offset;
 
     void Update()
     {
-        float step = speed * Time.deltaTime;
-        transform.position = Vector3.MoveTowards(transform.position, targetTable.position, step);
-
-        if (Vector3.Distance(transform.position, targetTable.position) < 0.1f)
+        if (isBeingDragged)
         {
-            
-        }
-
-        else
-        {
-            timer -= Time.deltaTime;
-
-            if (timer <= 0)
-            {
-                Leave();
-            }
+            Vector3 mousePosition = Input.mousePosition;
+            mousePosition = Camera.main.ScreenToWorldPoint(mousePosition);
+            transform.position = mousePosition - offset;
         }
     }
-    
-    private void Leave()
+
+    private void OnMouseDown()
     {
-        Debug.Log("Customer left because they ran out of patience.");
+        isBeingDragged = true;
+        offset = transform.position - Camera.main.ScreenToWorldPoint(Input.mousePosition);
+    }
+
+    private void OnMouseUp()
+    {
+        isBeingDragged = false;
+    }
+
+    private void OnTriggerEnter2D(Collider2D collider)
+    {
+        if (collider.CompareTag("DropTarget"))
+        {
+            // Trigger event for dropping object onto target
+        }
     }
 }
