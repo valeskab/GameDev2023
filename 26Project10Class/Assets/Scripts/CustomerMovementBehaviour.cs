@@ -4,35 +4,51 @@ using UnityEngine;
 
 public class CustomerMovementBehaviour : MonoBehaviour
 {
-    private bool isBeingDragged = false;
-    private Vector3 offset;
 
-    void Update()
+    private Vector3 mOffset;
+
+
+
+    private float mZCoord;
+
+
+
+    void OnMouseDown()
+
     {
-        if (isBeingDragged)
-        {
-            Vector3 mousePosition = Input.mousePosition;
-            mousePosition = Camera.main.ScreenToWorldPoint(mousePosition);
-            transform.position = mousePosition - offset;
-        }
+
+        mZCoord = Camera.main.WorldToScreenPoint(
+
+            gameObject.transform.position).z;
+        
+
+        mOffset = gameObject.transform.position - GetMouseAsWorldPoint();
+
     }
 
-    private void OnMouseDown()
+
+
+    private Vector3 GetMouseAsWorldPoint()
+
     {
-        isBeingDragged = true;
-        offset = transform.position - Camera.main.ScreenToWorldPoint(Input.mousePosition);
+
+        Vector3 mousePoint = Input.mousePosition;
+
+        mousePoint.z = mZCoord;
+        
+
+        return Camera.main.ScreenToWorldPoint(mousePoint);
+
     }
 
-    private void OnMouseUp()
+
+
+    void OnMouseDrag()
+
     {
-        isBeingDragged = false;
+
+        transform.position = GetMouseAsWorldPoint() + mOffset;
+
     }
 
-    private void OnTriggerEnter2D(Collider2D collider)
-    {
-        if (collider.CompareTag("DropTarget"))
-        {
-            // Trigger event for dropping object onto target
-        }
-    }
 }
