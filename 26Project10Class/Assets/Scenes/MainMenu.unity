@@ -295,7 +295,7 @@ RectTransform:
   m_GameObject: {fileID: 826685219}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.5430542, y: 1.5430542, z: 1.5430542}
+  m_LocalScale: {x: 1.2975851, y: 1.2975851, z: 1.2975851}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1507998260}
@@ -303,7 +303,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -87}
+  m_AnchoredPosition: {x: -568, y: -39}
   m_SizeDelta: {x: 359.6291, y: 152.5305}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &826685221
@@ -494,8 +494,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.000023365, y: -337}
-  m_SizeDelta: {x: 178.4017, y: 53.6327}
+  m_AnchoredPosition: {x: -571, y: -323}
+  m_SizeDelta: {x: 168.0949, y: 53.6327}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1026532644
 MonoBehaviour:
@@ -736,7 +736,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: SUSHI MASTER RESTAURANT
+  m_text: ENDLESS SHIFT
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -763,8 +763,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 66.35
-  m_fontSizeBase: 66.35
+  m_fontSize: 84.87
+  m_fontSizeBase: 84.87
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -848,8 +848,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -248}
-  m_SizeDelta: {x: 196.7161, y: 59.7375}
+  m_AnchoredPosition: {x: -568.76794, y: -204}
+  m_SizeDelta: {x: 177.5749, y: 59.7375}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1505789803
 MonoBehaviour:
