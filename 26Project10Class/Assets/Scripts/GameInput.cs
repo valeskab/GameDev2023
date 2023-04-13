@@ -3,8 +3,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerInputSystem : MonoBehaviour
+public class GameInput : MonoBehaviour
 {
+    public event EventHandler OnInteractAction;
+    
 
     private PlayerInputActions playerInputActions;
 
@@ -18,7 +20,7 @@ public class PlayerInputSystem : MonoBehaviour
     
     private void Interact_performed(UnityEngine.InputSystem.InputAction.CallbackContext obj)
     {
-        Debug.Log(obj);
+        OnInteractAction?.Invoke(this, EventArgs.Empty);
     }
     public Vector2 GetMovementVectorNormalized()
     {
