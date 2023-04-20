@@ -1,6 +1,3 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
@@ -27,7 +24,7 @@ public class PlayerController : MonoBehaviour
             lastInteractDir = moveDir;
         }
 
-        float interactDistance = 5f;
+        float interactDistance = 2f;
         if (Physics.Raycast(transform.position, lastInteractDir, out RaycastHit raycastHit, interactDistance, countersLayerMask))
         {
             if (raycastHit.transform.TryGetComponent(out ClearCounter clearCounter))
